@@ -24,6 +24,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-characterize'
 
 Plug 'andymass/vim-matchup'
+
 Plug 'sheerun/vim-polyglot'
 
 Plug 'editorconfig/editorconfig-vim'

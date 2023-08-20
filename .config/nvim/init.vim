@@ -44,7 +44,7 @@ set wrap              " Wrap long lines
 
 set laststatus=2      " Always display the status line
 
-" set cursorline        " Highlight the current line
+set cursorline        " Highlight the current line
 
 set autoread          " Automatically reload the file when it is changed from an outside program
 
@@ -68,14 +68,18 @@ filetype plugin indent on " Allow plugins to use filetype indentation
 if !isdirectory($HOME . "/.config/nvim/undo")
     call mkdir($HOME . "/.config/nvim/undo", "p")
 endif
+
 set undodir=~/.config/nvim/undo " Set the undo directory
+
 set undofile " Turn on persistent undo
+
 set undoreload=10000
 
 set backup
 if !isdirectory($HOME . "/.config/nvim/backup")
     call mkdir($HOME . "/.config/nvim/backup", "p")
 endif
+
 set backupdir=~/.config/nvim/backup
 
 "-----------------------
@@ -85,7 +89,6 @@ set backupdir=~/.config/nvim/backup
 let mapleader = ","
 
 " Disable arrow keys
-
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
@@ -94,6 +97,7 @@ inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
+
 
 " easier window navigation
 nnoremap <A-h> <C-w>h
@@ -109,8 +113,15 @@ tnoremap <A-l> <C-\><C-n><C-w>l
 nnoremap <S-Right> :tabnext<CR>
 nnoremap <S-Left> :tabprevious<CR>
 
-" Wildmenu
+" move line
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+inoremap <C-j> <Esc>:m .+1<CR>==gi
+inoremap <C-k> <Esc>:m .-2<CR>==gi
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
 
+" Wildmenu
 if has("wildmenu")
   set wildignore+=*.a,*.o
   set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png
@@ -144,7 +155,6 @@ nmap <F8> :NERDTreeToggle<CR>
 nmap <leader>t :NERDTreeFind<CR>
 
 " fzf
-
 nnoremap <leader><leader> :Files<CR>
 nnoremap <leader><Enter> :Buffers<CR>
 nnoremap <leader>w :Windows<CR>
@@ -152,25 +162,11 @@ nnoremap <leader>c :BCommits<CR>
 nnoremap <leader>r :Rg<space>
 
 " Easy Align
-
 nmap <leader>a <Plug>(EasyAlign)
 xmap <leader>a <Plug>(EasyAlign)
-
 
 if (has("termguicolors"))
  set termguicolors
 endif
 
-" For Neovim 0.1.3 and 0.1.4
-" let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-
-" enable the theme
-
-" syntax enable
-" colorscheme molokai
-
-" To enable the lightline theme
-" let g:lightline = { 'colorscheme': 'molokai' }
-
 colo night-owl
-
