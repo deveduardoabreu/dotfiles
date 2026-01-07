@@ -1,0 +1,15 @@
+[user]
+    name = Eduardo Rodrigues de Abreu
+    email = erd@certi.org.br
+
+[alias]
+    co = checkout
+    br = branch
+    ci = commit
+    st = status
+    last = log -1
+    unstage = reset HEAD --
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    rank = shortlog -sn --no-merges
+    zip = archive --format=zip -o latest.zip HEAD
+    ec = config --global -e
