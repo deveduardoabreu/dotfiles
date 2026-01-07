@@ -6,6 +6,8 @@
 " Load all the plugins
 source ~/.config/nvim/plugins.vim
 
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)')) | PlugInstall --sync | endif
+
 set showmatch         " Show matching braces
 
 set hlsearch          " switch on highlighting for the last used search pattern
@@ -44,7 +46,7 @@ set wrap              " Wrap long lines
 
 set laststatus=2      " Always display the status line
 
-set cursorline        " Highlight the current line
+" set cursorline        " Highlight the current line
 
 set autoread          " Automatically reload the file when it is changed from an outside program
 
@@ -59,6 +61,8 @@ set nofoldenable
 set autowrite
 
 set tags=tags; " Look for tags files
+
+set guicursor=n-v-c:ver25,i-ci-ve:ver25,r-cr:hor20,o:hor50
 
 filetype indent on " Use filetype indentation
 
@@ -169,4 +173,4 @@ if (has("termguicolors"))
  set termguicolors
 endif
 
-colo night-owl
+colorscheme molokai

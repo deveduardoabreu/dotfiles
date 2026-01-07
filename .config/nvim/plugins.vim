@@ -3,16 +3,8 @@
 " @author Eduardo Rodrigues de Abreu
 " @email dev.eduardo.abreu@gmail.com
 
-if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
-  !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall | source $MYVIMRC
-endif
-
 if has('nvim')
-	call plug#begin('~/.config/nvim/bundle')
-else
-	call plug#begin('~/.vim/bundle')
+    call plug#begin('~/.config/nvim/bundle')
 endif
 
 Plug 'tpope/vim-fugitive'
@@ -40,6 +32,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/lightline.vim'
 
 Plug 'haishanh/night-owl.vim'
+
+Plug 'tomasr/molokai'
 
 Plug 'preservim/nerdtree', {'On': ['NERDTreeToggle', 'modified'] }
 
